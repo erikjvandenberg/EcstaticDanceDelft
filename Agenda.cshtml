@@ -1,0 +1,746 @@
+﻿
+<!DOCTYPE html>
+<html lang="cs-CZ">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agenda | ecstaticdancedelft</title>
+    <link rel="stylesheet" type="text/css" media="all" href="http://ecstaticdancedelft.azurewebsites.net/Content/style.css" />
+    <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel="alternate" type="application/rss+xml" title="ecstaticdancedelft &raquo; RSS komentářů pro Agenda" href="http://ecstaticdancedelft.azurewebsites.net/?feed=rss2&#038;page_id=13" />
+    <script type="text/javascript">
+        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "http:\/\/ecstaticdancedelft.azurewebsites.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7" } };
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='ve-content-style-css' href='http://ecstaticdancedelft.azurewebsites.net/Content/content.css?ver=1508289305' type='text/css' media='all' />
+    <link rel='stylesheet' id='mioweb_content_css-css' href='http://ecstaticdancedelft.azurewebsites.net/Content/content.css?ver=1508289305' type='text/css' media='all' />
+    <link rel='stylesheet' id='member_content_css-css' href='http://ecstaticdancedelft.azurewebsites.net/Content/content.css?ver=1508289305' type='text/css' media='all' />
+    <script type='text/javascript' src='http://ecstaticdancedelft.azurewebsites.net/Scripts/jquery.js?ver=1.12.4'></script>
+    <script type='text/javascript' src='http://ecstaticdancedelft.azurewebsites.net/Scripts/jquery-migrate.min.js?ver=1.4.1'></script>
+    <script type='text/javascript' src='http://ecstaticdancedelft.azurewebsites.net/Scripts/front.js?ver=1508289305'></script>
+    <link rel='https://api.w.org/' href='http://ecstaticdancedelft.azurewebsites.net/?rest_route=/' />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://ecstaticdancedelft.azurewebsites.net/xmlrpc.php?rsd" />
+    <link rel='shortlink' href='http://ecstaticdancedelft.azurewebsites.net/Agenda.cshtml' />
+    <link rel="alternate" type="application/json+oembed" href="http://ecstaticdancedelft.azurewebsites.net/?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fecstaticdancedelft.azurewebsites.net%2F%3Fpage_id%3D13" />
+    <link rel="alternate" type="text/xml+oembed" href="http://ecstaticdancedelft.azurewebsites.net/?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fecstaticdancedelft.azurewebsites.net%2F%3Fpage_id%3D13&#038;format=xml" />
+    <link rel="icon" type="image/png" href="http://ecstaticdancedelft.azurewebsites.net/Images/A3-poster-ED.jpg">
+    <link rel="apple-touch-icon" href="http://ecstaticdancedelft.azurewebsites.net/Images/A3-poster-ED.jpg">
+
+    <meta property="og:title" content="Agenda  " />
+
+
+    <meta property="og:url" content="http://ecstaticdancedelft.azurewebsites.net/Agenda.cshtml" />
+    <meta property="og:site_name" content="ecstaticdancedelft" />
+    <meta property="og:locale" content="cs_CZ" />
+
+    <link rel="canonical" href="http://ecstaticdancedelft.azurewebsites.net/Agenda.cshtml" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <!--[if IE 8]>
+        <script src="http://ecstaticdancedelft.azurewebsites.net/Scripts/front_ie8.js"></script>
+    <![endif]-->
+    <style>
+        #header {
+            background: linear-gradient(to bottom, #431bbd 0%, #db4a11 100%) no-repeat border-box;
+            background: -moz-linear-gradient(top, #431bbd, #db4a11) no-repeat border-box;
+            background: -webkit-gradient(linear, left top, left bottom, from(#431bbd), to(#db4a11)) no-repeat border-box;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#431bbd', endColorstr='#db4a11');
+        }
+
+        #site_title {
+            font-size: 25px;
+        }
+
+        #header nav li a, #header nav li:after {
+            font-size: 15px;
+            color: #cedee0;
+        }
+
+        #mobile_nav svg path {
+            fill: #cedee0;
+        }
+
+        #header nav li:hover a, #header nav li.current-menu-item a, #header nav li.current_page_parent a, #header nav li.current-page-ancestor a {
+            color: #ffffff;
+        }
+
+        .ve-header-type1c #header:not(.is-mobile_menu) nav li:hover span,
+        .ve-header-type1c #header:not(.is-mobile_menu) nav li.current-menu-item span,
+        .ve-header-type1c #header:not(.is-mobile_menu) nav li.current_page_parent span,
+        .ve-header-type1c #header:not(.is-mobile_menu) nav li.current-page-ancestor span {
+            background-color: #ffffff;
+        }
+
+        #header nav #site_header_nav {
+        }
+
+        #header .sub-menu {
+            background: #ffffff;
+        }
+
+        #header nav li.menu-item .sub-menu a,
+        .header_s3 #site_header_nav li:hover a,
+        .header_s3 #site_header_nav li.current-menu-item a,
+        .header_s3 #site_header_nav li.current-page-ancestor a,
+        .header_s3 #site_header_nav li.current_page_parent a,
+        .ve-header-type8 #header nav li:hover a,
+        .ve-header-type8 #header nav li.current-menu-item a,
+        .ve-header-type8 #header nav li.current-page-ancestor a,
+        .ve-header-type8 #header nav li.current_page_parent a,
+        .ve-header-type5 #header nav li:hover a,
+        .ve-header-type5 #header nav li.current-menu-item a,
+        .ve-header-type5 #header nav li.current-page-ancestor a,
+        .ve-header-type5 #header nav li.current_page_parent a,
+        .ve-header-type4 #header nav li:hover a,
+        .ve-header-type4 #header nav li.current-menu-item a,
+        .ve-header-type4 #header nav li.current-page-ancestor a,
+        .ve-header-type4 #header nav li.current_page_parent a {
+            color: #ffffff;
+        }
+
+        #header nav li.menu-item .sub-menu li.menu-item-has-children > a::after {
+            border-color: #ffffff;
+        }
+
+        body {
+            background-color: #41a0a9;
+            font-size: 16px;
+            font-family: 'Open Sans';
+            font-weight: 400;
+            line-height: 1.5em;
+            background-color: #41a0a9;
+        }
+
+        input, textarea {
+            font-size: 16px;
+            font-family: 'Open Sans';
+            font-weight: 400;
+            line-height: 1.5em;
+        }
+
+        a {
+        }
+
+        .in_element_content {
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, h4, h5, h6, .title_element_container, .form_container_title {
+            font-family: 'Open Sans';
+            font-weight: 400;
+        }
+
+        .entry_content h1 {
+        }
+
+        .entry_content h2 {
+        }
+
+        .entry_content h3 {
+        }
+
+        .entry_content h4 {
+        }
+
+        .entry_content h5 {
+        }
+
+        .entry_content h6 {
+        }
+
+        #footer {
+            font-size: 14px;
+            color: #a8a8a8;
+            background: #181a1a;
+        }
+
+            #footer a {
+                color: #a8a8a8;
+            }
+
+        #header_in {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .ve_fixed_header_scrolled #header {
+        }
+
+        .ve_fixed_header_scrolled #header_in {
+        }
+    </style>
+    <style type="text/css">
+        .recentcomments a {
+            display: inline !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+    </style>
+
+</head>
+<body class="page-template-default page page-id-13 ve-header-type1 ve_list_style1">
+    <div id="wrapper">
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v2.8";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
+        <header class="ve_fixed_header">
+            <div id="header">
+                <div id="header_in" class="fix_width header_in_s1">
+
+                    <a href="http://ecstaticdancedelft.azurewebsites.net" id="site_title" title="ecstaticdancedelft">
+                    </a>
+
+
+                    <a href="#" id="mobile_nav">
+                        <span class="mobile_nav_menu">
+                            <svg height="32px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" /></svg>
+                        </span>
+                        <span class="mobile_nav_close">
+                            <svg height="512px" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M437.5,386.6L306.9,256l130.6-130.6c14.1-14.1,14.1-36.8,0-50.9c-14.1-14.1-36.8-14.1-50.9,0L256,205.1L125.4,74.5  c-14.1-14.1-36.8-14.1-50.9,0c-14.1,14.1-14.1,36.8,0,50.9L205.1,256L74.5,386.6c-14.1,14.1-14.1,36.8,0,50.9  c14.1,14.1,36.8,14.1,50.9,0L256,306.9l130.6,130.6c14.1,14.1,36.8,14.1,50.9,0C451.5,423.4,451.5,400.6,437.5,386.6z" /></svg>
+                        </span>
+                    </a>
+                    <nav>
+                        <div id="site_header_nav">
+                            <div class="menu-ecstatic-dance-delft-container">
+                                <ul id="menu-ecstatic-dance-delft" class="menu">
+                                    <li id="menu-item-127" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-127"><a href="http://ecstaticdancedelft.azurewebsites.net/">Ecstatic Dance</a><span></span></li>
+                                    <li id="menu-item-123" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-13 current_page_item menu-item-123"><a href="http://ecstaticdancedelft.azurewebsites.net/Agenda.cshtml">Agenda</a><span></span></li>
+                                    <li id="menu-item-124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-124"><a href="http://ecstaticdancedelft.azurewebsites.net/Team.cshtml">Ecstatic Family Delft &#038; Story</a><span></span></li>
+                                    <li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="http://ecstaticdancedelft.azurewebsites.net/Contact.cshtml">Contact us + Dance Venues</a><span></span></li>
+                                </ul>
+                            </div>                    <div class="cms_clear"></div>
+                        </div>
+                    </nav>
+
+                    <div class="cms_clear"></div>
+                </div>
+            </div>
+        </header>
+        <div id="content-container">
+            <div id="content">
+                <div id="row_0" class="row row_basic row_content">
+                    <div class="row_fix_width">
+                        <div class="col col-one col-first col-last">
+                            <div id="element_0_0_0" class="element_container title_element_container ">
+                                <div class="in_element_content ve_title_style_1">
+                                    <h1>Agenda</h1>
+                                </div>
+                            </div>
+                            <div data-animation="bounceInLeft" id="element_0_0_1" class="element_container link_element_container  ve_animation">
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function ($) { $("#element_0_0_1 .ve_content_link").click(function () { ve_show_popup(152); return false; }); });
+                                </script>
+                                <p class="ve_content_link_left">
+                                    <a class="ve_content_link" href="#">Reservations and tickets</a>
+                                </p>
+                            </div>
+                            <div id="element_0_0_4" class="element_container bullets_element_container ">
+                                <ul class="in_element_content mw_element_bullets mw_element_bullets_2">
+                                    <li class="mw_bullet_item mw_bullet_item_2 mw_bullet_item_wtitle">
+                                        <div class="bullet_icon">
+                                            <svg enable-background="new 0 0 32 32" height="32px" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <path d="M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="bullet_text">
+                                            <div class="bullet_text_title title_element_container">
+                                                Ecstatic Sunday morning
+                                            </div>
+                                            <div>
+                                                10.12.2017 / 11:00 - 13:00 / Locatie: Lijm en Cultuur - Rotterdamseweg 272, Delft
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mw_bullet_item mw_bullet_item_3 mw_bullet_item_wtitle">
+                                        <div class="bullet_icon">
+                                            <svg enable-background="new 0 0 32 32" height="32px" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <path d="M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="bullet_text">
+                                            <div class="bullet_text_title title_element_container">
+                                                Ecstatic Friday evening XL - White night
+                                            </div>
+                                            <div>
+                                                22.12.2017 / 19:00 - 22:30 / Locatie: Freinetschool Delft - Loevesteinplaats 8, Delft
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mw_bullet_item mw_bullet_item_4 mw_bullet_item_wtitle">
+                                        <div class="bullet_icon">
+                                            <svg enable-background="new 0 0 32 32" height="32px" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <path d="M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="bullet_text">
+                                            <div class="bullet_text_title title_element_container">
+                                                Ecstatic Sunday morning
+                                            </div>
+                                            <div>
+                                                14.01.2018 / 11:00 - 13:00 / Locatie: Lijm en Cultuur - Rotterdamseweg 272, Delft
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mw_bullet_item mw_bullet_item_5 mw_bullet_item_wtitle">
+                                        <div class="bullet_icon">
+                                            <svg enable-background="new 0 0 32 32" height="32px" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <path d="M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="bullet_text">
+                                            <div class="bullet_text_title title_element_container">
+                                                Ecstatic Friday evening
+                                            </div>
+                                            <div>
+                                                26.01.2018 / 20:00 - 22:00 / Locatie: Freinetschool Delft - Loevesteinplaats 8, Delft
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mw_bullet_item mw_bullet_item_6 mw_bullet_item_wtitle">
+                                        <div class="bullet_icon">
+                                            <svg enable-background="new 0 0 32 32" height="32px" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <path d="M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="bullet_text">
+                                            <div class="bullet_text_title title_element_container">
+                                                Ecstatic Sunday morning
+                                            </div>
+                                            <div>
+                                                11.02.2017 / 11:00 - 13:00 / Locatie: Lijm en Cultuur - Rotterdamseweg 272, Delft
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mw_bullet_item mw_bullet_item_7 mw_bullet_item_wtitle">
+                                        <div class="bullet_icon">
+                                            <svg enable-background="new 0 0 32 32" height="32px" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <path d="M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="bullet_text">
+                                            <div class="bullet_text_title title_element_container">
+                                                Ecstatic Friday evening
+                                            </div>
+                                            <div>
+                                                23.02.2017 / 20:00 - 22:00 / Locatie: Freinetschool Delft - Loevesteinplaats 8, Delft
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><div data-animation="fadeInLeft" id="element_0_0_5" class="element_container link_element_container  ve_animation">
+                                <p class="ve_content_link_left">
+                                    <a class="ve_content_link" target="_blank" href="https://www.google.nl/maps/dir/'''/Lijm+%26+Cultuur,+Rotterdamseweg+272,+2628+AT+Delft/@('@')51.9956841,4.3184482,13z/data=!4m13!4m12!1m5!1m1!1s0x47c5b591a969c633:0x943dcb3079db9b89!2m2!1d4.3703217!2d51.9958346!1m5!1m1!1s0x47c5b591a969c633:0x943dcb3079db9b89!2m2!1d4.3703217!2d51.9958346"> Locatie: Lijm en Cultuur, Rotterdamseweg 272, Delft</a>
+                                </p>
+                            </div><div data-animation="fadeInLeft" id="element_0_0_6" class="element_container link_element_container  ve_animation">
+                                <p class="ve_content_link_left">
+                                    <a class="ve_content_link" target="_blank" href="https://www.google.nl/maps/dir/Freinetschool+Delft,+Loevesteinplaats,+Delft/Freinetschool+Delft,+Loevesteinplaats+8,+2613+LE+Delft/@('@')52.006377,4.3504397,16.25z/data=!4m13!4m12!1m5!1m1!1s0x47c5b5c7da6e7717:0x1e5de9149dd43c24!2m2!1d4.3489526!2d52.0069471!1m5!1m1!1s0x47c5b5c7da6e7717:0x1e5de9149dd43c24!2m2!1d4.3489526!2d52.0069471">Locatie: Freinetschool, Loevesteinplaats 8, Delft</a>
+                                </p>
+                            </div><div id="element_0_0_7" class="element_container text_element_container ">
+                                <div class="in_element_content entry_content ve_content_text  element_text_li element_text_size_medium element_text_style_1 element_text_li">
+                                    <p><strong>Prijs: € 15,00 per keer, of 8-strippenkaart voor € 100,00 (één jaar geldig)</strong></p>
+                                    <p><italic>Tijdelijke actie: 50% korting op een 8-strippenkaart bij aanschaf vóór 31 januari 2018</italic></p>
+                                </div>
+                            </div><div id="element_0_0_8" class="element_container text_element_container  element_container_max_width">
+                                <div class="in_element_content entry_content ve_content_text  element_text_li element_text_size_medium element_text_style_1 element_text_li">
+                                    <div id="column_bottom" class="grid_4 transparent-80perc backgroundcolor1    ">
+                                        <div class="textblock">
+                                            <article>
+                                                <h3><strong></strong></h3>
+                                                <p><em><strong>&nbsp;</strong></em></p>
+                                                <p><em><strong>&nbsp;</strong></em></p>
+                                                <p><em><strong>&nbsp;</strong></em></p>
+                                                <p><em><strong>&nbsp;</strong></em></p>
+                                                <p>&nbsp;</p>
+                                                <article>
+                                                    <figure></figure>
+                                                    <figure class="figure-100perc">
+                                                        <figcaption class="invisible"></figcaption>
+                                                    </figure>
+                                                </article>
+                                            </article>
+                                        </div>
+                                    </div>
+                                    <div id="column_bottom" class="grid_4 transparent-80perc backgroundcolor1    "> </div>
+                                </div>
+                            </div>
+                        </div><div class="cms_clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div id="content">
+
+        </div>
+        <div style="display: none;">
+            <div id="ve_popup_container_152" class="ve_popup_container" data-delay="2" data-bg="#000000" data-width="500px" data-show="0">
+                <div id="content">
+                    <div id="popup_152row_0" class="row row_basic row_popup_152">
+                        <div class="row_fix_width">
+                            <div class="col col-one col-first col-last">
+                                <div id="popup_152element_0_0_0" class="element_container title_element_container ">
+                                    <div class="in_element_content ve_title_style_1">
+                                        <p style="text-align: center;"><strong>Reservation</strong></p>
+                                    </div>
+                                </div><div id="popup_152element_0_0_1" class="element_container text_element_container ">
+                                    <div class="in_element_content entry_content ve_content_text  element_text_li element_text_size_medium element_text_style_1 element_text_li">
+                                        <p style="text-align: center;"><strong>Saryo - saryo@kpnmail.nl</strong></p>
+                                        <p style="text-align: center;"><strong>Eva - eva@evaberger.eu</strong></p>
+                                        <p style="text-align: center;"><strong>Phone: 0031 (0)63883406</strong></p>
+                                    </div>
+                                </div>
+                            </div><div class="cms_clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript"> jQuery(document).ready(function ($) { });</script>
+        <style>
+            #row_0 {
+                background: #f05630 url(http://ecstaticdancedelft.azurewebsites.net/Images/EPIDAUROS-169x300.jpg);
+                background-position: center bottom;
+                background-repeat: repeat-x;
+                padding-bottom: 90px;
+                color: #121212;
+                padding-top: 50px;
+                border-bottom: 0px solid;
+                border-top: 0px solid;
+            }
+
+                #row_0 h2, #row_0 h1, #row_0 h3, #row_0 h4, #row_0 h5, #row_0 h6, #row_0 .title_element_container, #row_0 .form_container_title {
+                    color: #121212;
+                }
+
+            #element_0_0_0 {
+                margin-bottom: 15px;
+                margin-top: 0px;
+            }
+
+                #element_0_0_0 h1, #element_0_0_0 h2, #element_0_0_0 h3, #element_0_0_0 h4, #element_0_0_0 h5, #element_0_0_0 h6, #element_0_0_0 p {
+                    font-size: 55px;
+                    font-family: 'Arial Black';
+                    color: #000000;
+                    font-weight: normal;
+                }
+
+                #element_0_0_0 .ve_title_decoration {
+                }
+
+            #element_0_0_1 {
+                margin-bottom: 20px;
+                margin-top: 0px;
+            }
+
+                #element_0_0_1 a.ve_content_link {
+                    font-size: 22px;
+                    color: #ffffff;
+                }
+
+            #element_0_0_4 .bullet_icon {
+                font-size: 40px;
+                width: 80px;
+                height: 80px;
+                background-color: #9e220c;
+            }
+
+            #element_0_0_4 .mw_bullet_item_wtitle .bullet_icon {
+                height: 80px;
+            }
+
+            #element_0_0_4 .mw_element_bullets li {
+                margin-bottom: 30px;
+            }
+
+            #element_0_0_4 .bullet_icon svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            #element_0_0_4 .bullet_text {
+                font-size: 16px;
+            }
+
+            #element_0_0_4 .bullet_text_title {
+                font-size: 35px;
+                font-family: 'Arial Black';
+                font-weight: normal;
+            }
+
+            #element_0_0_5 {
+                margin-bottom: 20px;
+                margin-top: 0px;
+            }
+
+                #element_0_0_5 a.ve_content_link {
+                }
+
+            #element_0_0_6 {
+                margin-bottom: 20px;
+                margin-top: 0px;
+            }
+
+                #element_0_0_6 a.ve_content_link {
+                    color: #1b13bf;
+                }
+
+            #element_0_0_7 .in_element_content {
+            }
+
+            #element_0_0_8 {
+                margin-bottom: 30px;
+                margin-top: 0px;
+            }
+
+                #element_0_0_8 .in_element_content {
+                    font-size: 18px;
+                    max-width: 800px;
+                }
+
+            #row_1 {
+                background: #ffffff;
+                padding-bottom: 80px;
+                padding-top: 80px;
+                border-bottom: 0px solid;
+                border-top: 0px solid;
+            }
+
+            #element_1_0_0 h1, #element_1_0_0 h2, #element_1_0_0 h3, #element_1_0_0 h4, #element_1_0_0 h5, #element_1_0_0 h6, #element_1_0_0 p {
+                font-size: 26px;
+                line-height: 1.2em;
+            }
+
+            #element_1_0_0 .ve_title_decoration {
+            }
+
+            #element_1_0_1 .ve_contact_form_row input, #element_1_0_1 .ve_contact_form_row textarea {
+                background-color: #eeeeee;
+                font-size: 15px;
+            }
+
+            #element_1_0_1 .ve_contact_form_buttonrow button {
+                background: #e4960e;
+                font-size: 30px;
+                color: #ffffff;
+            }
+
+                #element_1_0_1 .ve_contact_form_buttonrow button .ve_button_subtext {
+                }
+
+                #element_1_0_1 .ve_contact_form_buttonrow button:hover {
+                }
+
+            #element_1_1_0 h1, #element_1_1_0 h2, #element_1_1_0 h3, #element_1_1_0 h4, #element_1_1_0 h5, #element_1_1_0 h6, #element_1_1_0 p {
+                font-size: 26px;
+                line-height: 1.2em;
+            }
+
+            #element_1_1_0 .ve_title_decoration {
+            }
+
+            #element_1_1_1 .in_element_content {
+            }
+
+            #element_1_1_2 h1, #element_1_1_2 h2, #element_1_1_2 h3, #element_1_1_2 h4, #element_1_1_2 h5, #element_1_1_2 h6, #element_1_1_2 p {
+                font-size: 26px;
+                line-height: 1.2em;
+            }
+
+            #element_1_1_2 .ve_title_decoration {
+            }
+
+            #element_1_1_3 .in_element_content {
+            }
+
+            #element_1_1_4 h1, #element_1_1_4 h2, #element_1_1_4 h3, #element_1_1_4 h4, #element_1_1_4 h5, #element_1_1_4 h6, #element_1_1_4 p {
+                font-size: 26px;
+                line-height: 1.2em;
+            }
+
+            #element_1_1_4 .ve_title_decoration {
+            }
+
+            #element_1_1_5 .in_element_content {
+            }
+
+            #cms_footer_23row_0 {
+                padding-bottom: 70px;
+                padding-top: 70px;
+                border-bottom: 0px solid;
+                border-top: 0px solid;
+            }
+
+            #cms_footer_23element_0_0_0 {
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+
+                #cms_footer_23element_0_0_0 h1, #cms_footer_23element_0_0_0 h2, #cms_footer_23element_0_0_0 h3, #cms_footer_23element_0_0_0 h4, #cms_footer_23element_0_0_0 h5, #cms_footer_23element_0_0_0 h6, #cms_footer_23element_0_0_0 p {
+                    font-size: 26px;
+                    font-family: 'Open Sans';
+                    color: #ffffff;
+                    font-weight: 400;
+                }
+
+                #cms_footer_23element_0_0_0 .ve_title_decoration {
+                }
+
+            #cms_footer_23element_0_1_0 {
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+
+                #cms_footer_23element_0_1_0 .in_element_content {
+                }
+
+                #cms_footer_23element_0_1_0 .ve_form_row .ve_form_text, #cms_footer_23element_0_1_0_form .ve_form_row .ve_form_text {
+                    background-color: #ededed;
+                    font-size: 15px;
+                }
+
+                #cms_footer_23element_0_1_0 .ve_form_label {
+                    font-size: 15px;
+                }
+
+                #cms_footer_23element_0_1_0 .open_lightbox_form {
+                    background: #e4960e;
+                    font-size: 28px;
+                    color: #ffffff;
+                }
+
+                    #cms_footer_23element_0_1_0 .open_lightbox_form .ve_button_subtext {
+                    }
+
+                    #cms_footer_23element_0_1_0 .open_lightbox_form:hover {
+                        background: #e6810e;
+                    }
+
+            #cms_footer_23element_0_1_0_form .ve_form_button_row button {
+                background: #e4960e;
+                font-size: 30px;
+                color: #ffffff;
+            }
+
+                #cms_footer_23element_0_1_0_form .ve_form_button_row button .ve_button_subtext {
+                }
+
+                #cms_footer_23element_0_1_0_form .ve_form_button_row button:hover {
+                    background: #e6810e;
+                }
+
+            #ve_popup_container_152 {
+            }
+
+            #popup_152row_0 {
+                background: #74848f;
+                padding-bottom: 50px;
+                color: #cfdae3;
+                padding-top: 50px;
+                border-bottom: 0px solid;
+                border-top: 0px solid;
+            }
+
+                #popup_152row_0 h2, #popup_152row_0 h1, #popup_152row_0 h3, #popup_152row_0 h4, #popup_152row_0 h5, #popup_152row_0 h6, #popup_152row_0 .title_element_container, #popup_152row_0 .form_container_title {
+                    color: #cfdae3;
+                }
+
+                #popup_152row_0 .row_fix_width {
+                    padding-left: 60px;
+                    padding-right: 60px;
+                }
+
+            #popup_152element_0_0_0 h1, #popup_152element_0_0_0 h2, #popup_152element_0_0_0 h3, #popup_152element_0_0_0 h4, #popup_152element_0_0_0 h5, #popup_152element_0_0_0 h6, #popup_152element_0_0_0 p {
+                font-size: 32px;
+                font-family: 'Open Sans';
+                color: #ffffff;
+                font-weight: 700;
+            }
+
+            #popup_152element_0_0_0 .ve_title_decoration {
+            }
+
+            #popup_152element_0_0_1 {
+                margin-bottom: 50px;
+                margin-top: 0px;
+            }
+
+                #popup_152element_0_0_1 .in_element_content {
+                    font-size: 17px;
+                    color: #140502;
+                }
+
+            @('@')media screen and (max-width: 640px) {
+                #element_0_0_0 h1, #element_0_0_0 h2, #element_0_0_0 h3, #element_0_0_0 h4, #element_0_0_0 h5, #element_0_0_0 h6, #element_0_0_0 p;
+
+            {
+                font-size: 50px;
+            }
+
+            }
+
+            @('@')media screen and (max-width: 480px) {
+                #element_0_0_0 h1, #element_0_0_0 h2, #element_0_0_0 h3, #element_0_0_0 h4, #element_0_0_0 h5, #element_0_0_0 h6, #element_0_0_0 p;
+
+            {
+                font-size: 35px;
+            }
+
+            }
+        </style><link rel='stylesheet' id='ve_animate_style-css' href='http://ecstaticdancedelft.azurewebsites.net/Scripts/animate.css?ver=4.7' type='text/css' media='all' />
+        <link rel='stylesheet' id='ve_lightbox_style-css' href='http://ecstaticdancedelft.azurewebsites.net/Content/lightbox.css?ver=4.7' type='text/css' media='all' />
+        <script type='text/javascript' src='http://ecstaticdancedelft.azurewebsites.net/Scripts/velocity.min.js?ver=1'></script>
+        <script type='text/javascript' src='http://ecstaticdancedelft.azurewebsites.net/Scripts/front_menu.js?ver=1'></script>
+        <script type='text/javascript'>
+            /* <![CDATA[ */
+            var ajaxurl = "http:\/\/http://ecstaticdancedelft.azurewebsites.net\/wp-admin\/admin-ajax.php";
+            var front_texts = { "required": "Mus\u00edte vyplnit v\u0161echny povinn\u00e9 \u00fadaje.", "wrongemail": "Emailov\u00e1 adresa nen\u00ed platn\u00e1. Zkontrolujte pros\u00edm zda je vypln\u011bna spr\u00e1vn\u011b." };
+            /* ]]> */
+        </script>
+        <script type='text/javascript' src='http://ecstaticdancedelft.azurewebsites.net/Scripts/front.js?ver=1508289305'></script>
+        <script type='text/javascript' src='http://ecstaticdancedelft.azurewebsites.net/Scripts/wp-embed.min.js?ver=4.7'></script>
+        <script type='text/javascript' src='http://ecstaticdancedelft.azurewebsites.net/Scripts/comment-reply.min.js?ver=4.7'></script>
+        <script type='text/javascript' src='http://ecstaticdancedelft.azurewebsites.net/Scripts/waypoints.min.js?ver=1'></script>
+        <script type='text/javascript' src='http://ecstaticdancedelft.azurewebsites.net/Scripts/lightbox.js?ver=1508289305'></script>
+    </footer>
+    </div>  <!-- wrapper -->
+    <script type="text/javascript">window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam.nr-data.net", "licenseKey": "a0000aad75", "applicationID": "19464102", "transactionName": "b1RUbUUHWEoCWhZeXFYed1pDD1lXTEkDUFY=", "queueTime": 0, "applicationTime": 179, "atts": "QxNXGw0dS0Q=", "errorBeacon": "bam.nr-data.net", "agent": "" }</script>
+</body>
+
+
+
+</html>
